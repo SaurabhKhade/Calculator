@@ -1,38 +1,61 @@
-*{
-	box-sizing: border-box;
+* {
 	margin: 0;
 	padding: 0;
 }
-body,html{
+
+body,html {
 	background-color: black;
 	color: orange;
 	height: 100%;
 }
 
-.container{
+.container {
 	height: 100%;
 	display: grid;
 	grid-template-rows: 5fr 6fr 5fr repeat(5,4fr);
 }
 
-.brand{
+.brand {
 	text-align: center;
-	font-size: 30px;
+	font-size: 40px;
+	align-self: end;
 }
 
-.screen{
+.screen {
 	text-align: right;
-	font-size: 25px;
 }
 
-.answer{
+#screen-text,#ans-text {
+	direction: rtl;
+	overflow: scroll;
+	align-self: end;
+	height: 90%;
+	width: 95%;
+	background-color: black;
+	color: orange;
+	padding-right: 10px;
+	border: none;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+#screen-text {
+	font-size: 35px;
+}
+
+#ans-text {
+	font-size: 27px;
+}
+
+.answer {
 	text-align: right;
 	font-size: 20px;
 	border-bottom: 2px solid orange;
 	margin-bottom: 6px;
+	padding-right: 10px;
 }
 
-.keyline{
+.keyline {
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
 	grid-gap: 5px;
@@ -41,15 +64,27 @@ body,html{
 	margin: 0 5px;
 }
 
-.key{
+.key {
+	display: table-cell;
+	vertical-align: middle;
 	border-color: orange;
 	background-color: black;
 	color: orange;
 	font-size: 22px;
 	font-weight: bold;
 	height: 90%;
+	border-radius: 10px;
 }
 
-.key:active{
+.key:active {
 	opacity: 0.2;
+	outline: none;
+}
+
+.key:focus {
+	outline: none;
+}
+
+input {
+	outline: none;
 }
